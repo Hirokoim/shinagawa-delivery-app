@@ -38,14 +38,11 @@
 
 <main class="max-w-5xl mx-auto px-4 py-6 pb-20">
 
-  <!-- ===== SCREEN A: 新規申請 ===== -->
+  <!-- ===== SCREEN A ===== -->
   <div id="screen-A">
     <h2 class="text-lg font-bold mb-5" style="color:#1e3a5f">新規搬出入申請</h2>
-
     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-5">
       <form id="appForm">
-
-        <!-- 1. 申請種別 -->
         <fieldset class="mb-5">
           <legend class="text-sm font-semibold text-gray-700 mb-2">1. 申請種別 <span class="text-red-500">*</span></legend>
           <div class="flex flex-wrap gap-5">
@@ -54,8 +51,6 @@
             <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="appType" value="大量物・重量物" onchange="runCheck()"> 大量物・重量物</label>
           </div>
         </fieldset>
-
-        <!-- 2. 作業種別 -->
         <fieldset class="mb-5">
           <legend class="text-sm font-semibold text-gray-700 mb-2">2. 作業種別 <span class="text-red-500">*</span></legend>
           <div class="flex flex-wrap gap-5">
@@ -64,29 +59,19 @@
             <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="workType" value="搬入出両方" onchange="runCheck()"> 搬入出両方</label>
           </div>
         </fieldset>
-
-        <!-- 3. 作業内容 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">3. 作業内容 <span class="text-red-500">*</span></label>
           <select id="workContent" onchange="runCheck()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm w-full max-w-xs">
             <option value="">-- 選択してください --</option>
-            <option>引越し</option>
-            <option>新規什器</option>
-            <option>工事資材</option>
-            <option>資材搬出</option>
-            <option>廃棄物搬出</option>
-            <option>特殊物品（自販機・金庫・サーバー等）</option>
-            <option>その他</option>
+            <option>引越し</option><option>新規什器</option><option>工事資材</option>
+            <option>資材搬出</option><option>廃棄物搬出</option>
+            <option>特殊物品（自販機・金庫・サーバー等）</option><option>その他</option>
           </select>
         </div>
-
-        <!-- 4. 希望日 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">4. 希望日 <span class="text-red-500">*</span></label>
           <input type="date" id="desiredDate" onchange="runCheck()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
         </div>
-
-        <!-- 5. 希望時間帯 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">5. 希望時間帯 <span class="text-red-500">*</span></label>
           <div class="flex flex-wrap items-center gap-2">
@@ -95,8 +80,6 @@
             <select id="endTime" onchange="runCheck()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">終了時刻</option></select>
           </div>
         </div>
-
-        <!-- 6. 車両台数 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">6. 車両台数 <span class="text-red-500">*</span></label>
           <div class="flex items-center gap-2">
@@ -104,28 +87,20 @@
             <span class="text-sm text-gray-500">台</span>
           </div>
         </div>
-
-        <!-- 7. 車両サイズ -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">7. 車両サイズ <span class="text-red-500">*</span></label>
           <select id="vehicleSize" onchange="runCheck()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
             <option value="">-- 選択してください --</option>
-            <option>軽トラ</option>
-            <option>1BOX</option>
-            <option>2tトラック</option>
+            <option>軽トラ</option><option>1BOX</option><option>2tトラック</option>
           </select>
           <p class="text-red-500 text-xs mt-1 font-medium">※ 4t車以上は入場不可</p>
         </div>
-
-        <!-- 8. 搬出入先フロア -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">8. 搬出入先フロア <span class="text-red-500">*</span></label>
           <select id="targetFloor" onchange="runCheck()" class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
             <option value="">-- 選択してください --</option>
           </select>
         </div>
-
-        <!-- 9. 段ボール数 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">9. 段ボール数</label>
           <div class="flex items-center gap-2">
@@ -133,8 +108,6 @@
             <span class="text-sm text-gray-500">箱</span>
           </div>
         </div>
-
-        <!-- 10. 総重量 -->
         <div class="mb-5">
           <label class="block text-sm font-semibold text-gray-700 mb-2">10. 総重量（概算）</label>
           <div class="flex items-center gap-2">
@@ -142,8 +115,6 @@
             <span class="text-sm text-gray-500">kg</span>
           </div>
         </div>
-
-        <!-- 11. 特殊物品 -->
         <fieldset class="mb-5">
           <legend class="text-sm font-semibold text-gray-700 mb-2">11. 特殊物品の有無 <span class="text-red-500">*</span></legend>
           <div class="flex flex-wrap gap-5 mb-2">
@@ -154,8 +125,6 @@
             <input type="text" id="specialText" oninput="runCheck()" placeholder="特殊物品の詳細（例：サーバーラック 3台、金庫 1台）" class="border border-gray-300 rounded-lg px-3 py-2 text-sm w-full max-w-md">
           </div>
         </fieldset>
-
-        <!-- 12. 開梱・設置作業 -->
         <fieldset class="mb-5">
           <legend class="text-sm font-semibold text-gray-700 mb-2">12. 開梱・設置作業の有無 <span class="text-red-500">*</span></legend>
           <div class="flex flex-wrap gap-5">
@@ -163,41 +132,27 @@
             <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="unpackWork" value="あり" onchange="runCheck()"> あり</label>
           </div>
         </fieldset>
-
-        <!-- 13. 備考 -->
         <div class="mb-1">
           <label class="block text-sm font-semibold text-gray-700 mb-2">13. 備考</label>
           <textarea id="remarks" rows="3" placeholder="特記事項があればご記入ください" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"></textarea>
         </div>
-
       </form>
-    </div><!-- /form card -->
-
-    <!-- AI CHECK PANEL -->
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
-      <h3 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:#1e3a5f">
-        <span class="text-base">🤖</span> AIチェック結果
-      </h3>
-      <div id="aiResults">
-        <p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p>
-      </div>
     </div>
-
-    <!-- SUMMARY PANEL -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
+      <h3 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:#1e3a5f"><span class="text-base">🤖</span> AIチェック結果</h3>
+      <div id="aiResults"><p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p></div>
+    </div>
     <div id="summaryBox" class="hidden bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-5">
       <h3 class="text-sm font-bold mb-4" style="color:#1e3a5f">📋 申請サマリー</h3>
       <div id="summaryGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-6 text-sm mb-4"></div>
       <div id="summaryStatus" class="pt-3 border-t border-gray-100"></div>
     </div>
-
     <div class="flex justify-end">
-      <button onclick="submitApp()" class="px-8 py-2.5 text-white text-sm font-semibold rounded-lg shadow hover:opacity-90 transition-opacity" style="background:#1e3a5f">
-        申請する →
-      </button>
+      <button onclick="submitApp()" class="px-8 py-2.5 text-white text-sm font-semibold rounded-lg shadow hover:opacity-90 transition-opacity" style="background:#1e3a5f">申請する →</button>
     </div>
-  </div><!-- /screen-A -->
+  </div>
 
-  <!-- ===== SCREEN B: 申請履歴 ===== -->
+  <!-- ===== SCREEN B ===== -->
   <div id="screen-B" class="hidden">
     <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
       <h2 class="text-lg font-bold" style="color:#1e3a5f">申請履歴</h2>
@@ -206,11 +161,11 @@
     <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 mb-4">
       <div class="flex flex-wrap items-center gap-2">
         <span class="text-xs text-gray-500 font-medium">絞り込み：</span>
-        <button id="fb-all"    onclick="setFilter('all')"    class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">すべて</button>
+        <button id="fb-all" onclick="setFilter('all')" class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">すべて</button>
         <button id="fb-審査中" onclick="setFilter('審査中')" class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">🔍 審査中</button>
         <button id="fb-承認済み" onclick="setFilter('承認済み')" class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">✅ 承認済み</button>
         <button id="fb-修正依頼" onclick="setFilter('修正依頼')" class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">✏️ 修正依頼</button>
-        <button id="fb-却下"   onclick="setFilter('却下')"   class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">❌ 却下</button>
+        <button id="fb-却下" onclick="setFilter('却下')" class="filter-btn px-3 py-1 rounded-full border text-xs font-medium transition-all">❌ 却下</button>
       </div>
     </div>
     <div id="historyList"></div>
@@ -218,30 +173,62 @@
 
   <!-- ===== SCREEN C ===== -->
   <div id="screen-C" class="hidden">
-    <h2 class="text-lg font-bold mb-5" style="color:#1e3a5f">管理ダッシュボード</h2>
-    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-16 text-center">
-      <div class="text-7xl mb-4">📊</div>
-      <p class="text-gray-500 font-medium">管理ダッシュボードは準備中です</p>
-      <p class="text-gray-400 text-sm mt-2">次のプロンプトで実装予定</p>
+    <h2 class="text-lg font-bold mb-5" style="color:#1e3a5f">管理ダッシュボード <span class="text-xs font-normal text-gray-400 ml-1">物流管理センター</span></h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3" id="dashCards"></div>
+    <div class="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 mb-6">
+      <span>🤖</span>
+      <p class="text-sm text-blue-800">AI導入前 差し戻し率 <strong>35%</strong> → 導入後 <strong class="text-green-700">3%</strong>（デモ用固定値）</p>
+    </div>
+    <div class="mb-6">
+      <h3 class="text-sm font-bold mb-3 flex items-center gap-2" style="color:#1e3a5f">
+        ⚡ 要対応（審査中）
+        <span id="pendingBadge" class="inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-xs font-bold" style="background:#1e3a5f">0</span>
+      </h3>
+      <div id="pendingList"></div>
+    </div>
+    <div>
+      <h3 class="text-sm font-bold mb-3" style="color:#1e3a5f">📦 本日の搬出入</h3>
+      <div id="todayList"></div>
     </div>
   </div>
 
   <!-- ===== SCREEN D ===== -->
   <div id="screen-D" class="hidden">
-    <h2 class="text-lg font-bold mb-5" style="color:#1e3a5f">スケジュール</h2>
-    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-16 text-center">
-      <div class="text-7xl mb-4">📅</div>
-      <p class="text-gray-500 font-medium">スケジュール画面は準備中です</p>
-      <p class="text-gray-400 text-sm mt-2">次のプロンプトで実装予定</p>
+    <h2 class="text-lg font-bold mb-5" style="color:#1e3a5f">搬出入スケジュール</h2>
+    <div class="flex items-center justify-center gap-4 mb-5">
+      <button onclick="changeDay(-1)" class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">◀ 前日</button>
+      <span id="scheduleDate" class="text-base font-bold text-center" style="color:#1e3a5f;min-width:220px"></span>
+      <button onclick="changeDay(1)" class="px-3 py-1.5 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">翌日 ▶</button>
+    </div>
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 mb-5">
+      <div class="overflow-x-auto">
+        <div id="timeline" style="min-width:860px"></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
+      <h3 class="text-sm font-bold mb-4" style="color:#1e3a5f">📈 週間サマリー（選択日から7日間）</h3>
+      <div id="weeklySummary"></div>
     </div>
   </div>
 
 </main>
 
+<!-- ===== MODAL ===== -->
+<div id="appModal" class="hidden fixed inset-0 z-50 flex items-center justify-center" style="background:rgba(0,0,0,0.45)" onclick="if(event.target===this)closeModal()">
+  <div class="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md mx-4">
+    <h3 id="modalTitle" class="text-base font-bold mb-1" style="color:#1e3a5f"></h3>
+    <p class="text-xs text-gray-400 mb-3">コメントを入力して保存してください</p>
+    <textarea id="modalComment" rows="4" placeholder="コメントを入力してください" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm mb-4"></textarea>
+    <input type="hidden" id="modalAppId">
+    <input type="hidden" id="modalType">
+    <div class="flex justify-end gap-3">
+      <button onclick="closeModal()" class="px-4 py-2 text-sm border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">キャンセル</button>
+      <button onclick="saveModal()" class="px-5 py-2 text-sm text-white font-semibold rounded-lg hover:opacity-90" style="background:#1e3a5f">保存</button>
+    </div>
+  </div>
+</div>
+
 <script>
-// ============================================================
-// CONSTANTS
-// ============================================================
 const MC = '#1e3a5f';
 const COMM_FLOORS = ['1F','2F','22F'];
 const MOCK_SLOTS = [
@@ -249,416 +236,362 @@ const MOCK_SLOTS = [
   { date:'2026-06-20', s:22*60, e:26*60, label:'6/20（土）22:00〜翌02:00' },
   { date:'2026-06-21', s: 9*60, e:13*60, label:'6/21（日）09:00〜13:00' },
 ];
-
-// ============================================================
-// UTILS
-// ============================================================
 const pad = n => String(n).padStart(2,'0');
-
 function minsToLabel(m) {
   if (m >= 1440) { const h=Math.floor((m-1440)/60),mn=(m-1440)%60; return `翌${pad(h)}:${pad(mn)}`; }
   return `${pad(Math.floor(m/60))}:${pad(m%60)}`;
 }
-
-function isWeekday(ds) {
-  if (!ds) return null;
-  const d = new Date(ds + 'T00:00:00');
-  return d.getDay() >= 1 && d.getDay() <= 5;
+function isWeekday(ds) { if(!ds)return null; const d=new Date(ds+'T00:00:00'); return d.getDay()>=1&&d.getDay()<=5; }
+function bizDaysBetween(from,to) {
+  const f=new Date(from+'T00:00:00'),t=new Date(to+'T00:00:00'); let cnt=0,cur=new Date(f);
+  while(cur<t){cur.setDate(cur.getDate()+1);if(cur.getDay()>=1&&cur.getDay()<=5)cnt++;} return cnt;
 }
-
-function bizDaysBetween(from, to) {
-  const f = new Date(from+'T00:00:00'), t = new Date(to+'T00:00:00');
-  let cnt = 0, cur = new Date(f);
-  while (cur < t) { cur.setDate(cur.getDate()+1); if(cur.getDay()>=1&&cur.getDay()<=5) cnt++; }
-  return cnt;
+function subtractBizDays(ds,days) {
+  const d=new Date(ds+'T00:00:00');let sub=0;
+  while(sub<days){d.setDate(d.getDate()-1);if(d.getDay()>=1&&d.getDay()<=5)sub++;} return d;
 }
+function fmtDate(d){return `${d.getFullYear()}/${pad(d.getMonth()+1)}/${pad(d.getDate())}`;}
+function todayStr(){const t=new Date();return `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;}
 
-function subtractBizDays(ds, days) {
-  const d = new Date(ds+'T00:00:00'); let sub = 0;
-  while (sub < days) { d.setDate(d.getDate()-1); if(d.getDay()>=1&&d.getDay()<=5) sub++; }
-  return d;
-}
-
-function fmtDate(d) { return `${d.getFullYear()}/${pad(d.getMonth()+1)}/${pad(d.getDate())}`; }
-
-function todayStr() {
-  const t = new Date();
-  return `${t.getFullYear()}-${pad(t.getMonth()+1)}-${pad(t.getDate())}`;
-}
-
-// ============================================================
-// INIT SELECTS
-// ============================================================
 function initSelects() {
-  // Time
-  const sS = document.getElementById('startTime'), sE = document.getElementById('endTime');
-  const mins = [];
-  for (let h=0;h<24;h++) for (let m=0;m<60;m+=30) mins.push(h*60+m);
-  for (let h=0;h<=6;h++) for (let m=0;m<60;m+=30) { if(h===6&&m>0) break; mins.push((h+24)*60+m); }
-  mins.forEach(v => {
-    sS.add(new Option(minsToLabel(v), v));
-    sE.add(new Option(minsToLabel(v), v));
-  });
-  // Floors
-  const sf = document.getElementById('targetFloor');
-  ['B2F','B1F'].forEach(f => sf.add(new Option(f,f)));
-  for (let i=1;i<=38;i++) sf.add(new Option(i+'F', i+'F'));
+  const sS=document.getElementById('startTime'),sE=document.getElementById('endTime');
+  const mins=[];
+  for(let h=0;h<24;h++)for(let m=0;m<60;m+=30)mins.push(h*60+m);
+  for(let h=0;h<=6;h++)for(let m=0;m<60;m+=30){if(h===6&&m>0)break;mins.push((h+24)*60+m);}
+  mins.forEach(v=>{sS.add(new Option(minsToLabel(v),v));sE.add(new Option(minsToLabel(v),v));});
+  const sf=document.getElementById('targetFloor');
+  ['B2F','B1F'].forEach(f=>sf.add(new Option(f,f)));
+  for(let i=1;i<=38;i++)sf.add(new Option(i+'F',i+'F'));
 }
 
-// ============================================================
-// TABS
-// ============================================================
-let activeTab = '';
+let activeTab='';
 function switchTab(t) {
-  ['A','B','C','D'].forEach(x => {
+  ['A','B','C','D'].forEach(x=>{
     document.getElementById('screen-'+x).classList.add('hidden');
-    const b = document.getElementById('tab-'+x);
-    b.style.color = '#6b7280'; b.style.borderBottomColor = 'transparent'; b.style.fontWeight = '';
+    const b=document.getElementById('tab-'+x);
+    b.style.color='#6b7280';b.style.borderBottomColor='transparent';b.style.fontWeight='';
   });
   document.getElementById('screen-'+t).classList.remove('hidden');
-  const ab = document.getElementById('tab-'+t);
-  ab.style.color = MC; ab.style.borderBottomColor = MC; ab.style.fontWeight = '600';
-  activeTab = t;
-  if (t === 'B') { renderHistory(); setFilter(currentFilter||'all'); }
+  const ab=document.getElementById('tab-'+t);
+  ab.style.color=MC;ab.style.borderBottomColor=MC;ab.style.fontWeight='600';
+  activeTab=t;
+  if(t==='B'){renderHistory();setFilter(currentFilter||'all');}
+  if(t==='C')renderDashboard();
+  if(t==='D'){schedDate=todayStr();renderSchedule();}
 }
 
-// ============================================================
-// SPECIAL ITEM TOGGLE
-// ============================================================
-function toggleSpecial() {
-  const v = document.querySelector('input[name="specialItem"]:checked')?.value;
-  document.getElementById('specialDetail').classList.toggle('hidden', v !== 'あり');
+function toggleSpecial(){
+  const v=document.querySelector('input[name="specialItem"]:checked')?.value;
+  document.getElementById('specialDetail').classList.toggle('hidden',v!=='あり');
 }
 
-// ============================================================
-// FORM VALUES
-// ============================================================
-function getVals() {
+function getVals(){
   return {
-    appType:        document.querySelector('input[name="appType"]:checked')?.value || '',
-    workType:       document.querySelector('input[name="workType"]:checked')?.value || '',
-    workContent:    document.getElementById('workContent').value,
-    desiredDate:    document.getElementById('desiredDate').value,
-    startMin:       document.getElementById('startTime').value !== '' ? parseInt(document.getElementById('startTime').value) : null,
-    endMin:         document.getElementById('endTime').value !== ''   ? parseInt(document.getElementById('endTime').value)   : null,
-    vehicleCount:   parseInt(document.getElementById('vehicleCount').value) || 0,
-    vehicleSize:    document.getElementById('vehicleSize').value,
-    targetFloor:    document.getElementById('targetFloor').value,
-    cardboardCount: parseInt(document.getElementById('cardboardCount').value) || 0,
-    totalWeight:    parseInt(document.getElementById('totalWeight').value)    || 0,
-    specialItem:    document.querySelector('input[name="specialItem"]:checked')?.value || 'なし',
-    unpackWork:     document.querySelector('input[name="unpackWork"]:checked')?.value  || 'なし',
-    remarks:        document.getElementById('remarks').value,
+    appType:document.querySelector('input[name="appType"]:checked')?.value||'',
+    workType:document.querySelector('input[name="workType"]:checked')?.value||'',
+    workContent:document.getElementById('workContent').value,
+    desiredDate:document.getElementById('desiredDate').value,
+    startMin:document.getElementById('startTime').value!==''?parseInt(document.getElementById('startTime').value):null,
+    endMin:document.getElementById('endTime').value!==''?parseInt(document.getElementById('endTime').value):null,
+    vehicleCount:parseInt(document.getElementById('vehicleCount').value)||0,
+    vehicleSize:document.getElementById('vehicleSize').value,
+    targetFloor:document.getElementById('targetFloor').value,
+    cardboardCount:parseInt(document.getElementById('cardboardCount').value)||0,
+    totalWeight:parseInt(document.getElementById('totalWeight').value)||0,
+    specialItem:document.querySelector('input[name="specialItem"]:checked')?.value||'なし',
+    unpackWork:document.querySelector('input[name="unpackWork"]:checked')?.value||'なし',
+    remarks:document.getElementById('remarks').value,
   };
 }
 
-// ============================================================
-// AI CHECK ENGINE
-// ============================================================
-function runCheck() {
-  const v = getVals();
-  const res = [];
-
-  // ── Rule 1: 大量物判定 ──
-  const bReasons = [];
-  if (v.vehicleSize === '2tトラック' && v.vehicleCount >= 2) bReasons.push(`2tトラック ${v.vehicleCount}台`);
-  if (v.cardboardCount > 100) bReasons.push(`段ボール ${v.cardboardCount}箱`);
-  if (v.totalWeight > 500)    bReasons.push(`総重量 ${v.totalWeight}kg`);
-  const isBulk = bReasons.length > 0;
-
-  const anyBulkInput = v.vehicleSize || v.vehicleCount || v.cardboardCount || v.totalWeight;
-  if (anyBulkInput) {
-    if (isBulk) {
-      res.push({ icon:'⚠️', cls:'warn', lbl:'ルール1：大量物判定',
-        msg:`大量物に該当します（${bReasons.join('、')}）。<br>搬出入作業は原則として<strong>平日夜間（22:00〜翌6:00）もしくは土日祝</strong>に実施が必要です。` });
-    } else {
-      res.push({ icon:'✅', cls:'ok', lbl:'ルール1：大量物判定',
-        msg:'大量物には該当しません。通常申請で処理可能です。' });
+function runCheck(){
+  const v=getVals();const res=[];
+  const bR=[];
+  if(v.vehicleSize==='2tトラック'&&v.vehicleCount>=2)bR.push(`2tトラック ${v.vehicleCount}台`);
+  if(v.cardboardCount>100)bR.push(`段ボール ${v.cardboardCount}箱`);
+  if(v.totalWeight>500)bR.push(`総重量 ${v.totalWeight}kg`);
+  const isBulk=bR.length>0;
+  const anyInput=v.vehicleSize||v.vehicleCount||v.cardboardCount||v.totalWeight;
+  if(anyInput){
+    if(isBulk)res.push({icon:'⚠️',cls:'warn',lbl:'ルール1：大量物判定',msg:`大量物に該当します（${bR.join('、')}）。<br>搬出入作業は原則として<strong>平日夜間（22:00〜翌6:00）もしくは土日祝</strong>に実施が必要です。`});
+    else res.push({icon:'✅',cls:'ok',lbl:'ルール1：大量物判定',msg:'大量物には該当しません。通常申請で処理可能です。'});
+  }
+  if(v.desiredDate&&v.startMin!==null&&v.endMin!==null){
+    const overlapDay=v.startMin<22*60&&v.endMin>6*60;const weekday=isWeekday(v.desiredDate);
+    if(isBulk&&weekday&&overlapDay){
+      let alt='<div class="mt-3 space-y-2"><p class="text-xs font-semibold">💡 代替枠の提案：</p>';
+      MOCK_SLOTS.forEach(sl=>{alt+=`<div class="flex items-center justify-between bg-white rounded border border-red-200 px-3 py-2"><span class="text-xs">${sl.label}</span><button onclick="applySlot(${sl.s},${sl.e},'${sl.date}')" class="text-xs text-white px-2 py-1 rounded ml-2" style="background:${MC}">この時間で申請 →</button></div>`;});
+      alt+='</div>';
+      res.push({icon:'❌',cls:'error',lbl:'ルール2：時間帯チェック',msg:'大量物は<strong>平日日中（6:00〜22:00）の搬出入はできません</strong>。平日夜間（22:00〜翌6:00）または土日祝を選択してください。'+alt});
+    }else{res.push({icon:'✅',cls:'ok',lbl:'ルール2：時間帯チェック',msg:'通常申請の時間帯条件を満たしています。'});}
+  }
+  res.push({icon:'✅',cls:'ok',lbl:'ルール3：車両サイズ制限',msg:'車両サイズ制限OK（車幅2.1m以下 × 車長6.5m以下 × 車高3.1m以下）'});
+  if(v.desiredDate){
+    const isBT=isBulk||v.appType==='大量物・重量物';const req=isBT?10:(v.appType==='臨時'?3:0);
+    if(req>0){const left=bizDaysBetween(todayStr(),v.desiredDate);
+      if(left>=req)res.push({icon:'✅',cls:'ok',lbl:'ルール4：申請期限',msg:`申請期限内です（残り${left}営業日 ／ 必要：${req}営業日前まで）`});
+      else res.push({icon:'❌',cls:'error',lbl:'ルール4：申請期限',msg:`申請期限を過ぎています（残り${left}営業日 ／ 必要：${req}営業日前まで）。<br>ご希望に沿えない場合があります。`});
     }
   }
-
-  // ── Rule 2: 時間帯チェック ──
-  if (v.desiredDate && v.startMin !== null && v.endMin !== null) {
-    const DAY_S=6*60, DAY_E=22*60;
-    const overlapDay = v.startMin < DAY_E && v.endMin > DAY_S;
-    const weekday = isWeekday(v.desiredDate);
-    if (isBulk && weekday && overlapDay) {
-      let altHtml = '<div class="mt-3 space-y-2"><p class="text-xs font-semibold">💡 代替枠の提案：</p>';
-      MOCK_SLOTS.forEach(sl => {
-        altHtml += `<div class="flex items-center justify-between bg-white rounded border border-red-200 px-3 py-2">
-          <span class="text-xs">${sl.label}</span>
-          <button onclick="applySlot(${sl.s},${sl.e},'${sl.date}')" class="text-xs text-white px-2 py-1 rounded ml-2 hover:opacity-80" style="background:${MC}">この時間で申請 →</button>
-        </div>`;
-      });
-      altHtml += '</div>';
-      res.push({ icon:'❌', cls:'error', lbl:'ルール2：時間帯チェック',
-        msg:'大量物は<strong>平日日中（6:00〜22:00）の搬出入はできません</strong>。平日夜間（22:00〜翌6:00）または土日祝を選択してください。' + altHtml });
-    } else {
-      res.push({ icon:'✅', cls:'ok', lbl:'ルール2：時間帯チェック',
-        msg:'通常申請の時間帯条件を満たしています。' });
-    }
+  if(v.targetFloor){const comm=COMM_FLOORS.includes(v.targetFloor);
+    res.push({icon:'ℹ️',cls:'info',lbl:'ルール5：搬出入ルート',msg:comm?'推奨ルート：<strong>ルートD（G6・G7 → 荷捌き14,15番）</strong> ※商業エリア':'推奨ルート：<strong>ルートA（EV-1 → 荷捌き1,2番）</strong> 最大積載2,600kg'});
   }
-
-  // ── Rule 3: 車両サイズ ──
-  res.push({ icon:'✅', cls:'ok', lbl:'ルール3：車両サイズ制限',
-    msg:'車両サイズ制限OK（車幅2.1m以下 × 車長6.5m以下 × 車高3.1m以下）' });
-
-  // ── Rule 4: 申請期限 ──
-  if (v.desiredDate) {
-    const isBulkType = isBulk || v.appType === '大量物・重量物';
-    const req = isBulkType ? 10 : (v.appType === '臨時' ? 3 : 0);
-    if (req > 0) {
-      const left = bizDaysBetween(todayStr(), v.desiredDate);
-      if (left >= req) {
-        res.push({ icon:'✅', cls:'ok', lbl:'ルール4：申請期限',
-          msg:`申請期限内です（残り${left}営業日 ／ 必要：${req}営業日前まで）` });
-      } else {
-        res.push({ icon:'❌', cls:'error', lbl:'ルール4：申請期限',
-          msg:`申請期限を過ぎています（残り${left}営業日 ／ 必要：${req}営業日前まで）。<br>ご希望に沿えない場合があります。` });
-      }
-    }
+  if(v.specialItem==='あり')res.push({icon:'⚠️',cls:'warn',lbl:'ルール6：特殊物品',msg:'特殊物品は縦持ち対象外です。<strong>直納＋EVオペレーター手配が必要</strong>です（日中 26,000円 ／ 夜間 34,000円 per ELV）'});
+  if(v.unpackWork==='あり')res.push({icon:'⚠️',cls:'warn',lbl:'ルール7：作業申請書',msg:'搬出入申請に加えて<strong>「作業申請書」の提出が必要</strong>です（ポータルサイトにて提出）'});
+  if(isBulk&&v.vehicleCount>0){
+    const night=v.startMin!==null&&(v.startMin>=22*60||(v.endMin!==null&&v.endMin>24*60));
+    let cm=v.vehicleCount>=10?`縦持ち料金（${v.vehicleCount}台）：${night?'夜間':'日中'} ${(night?34000:24000).toLocaleString()}円 × ${v.vehicleCount}台 = <strong>${((night?34000:24000)*v.vehicleCount).toLocaleString()}円</strong>`:`縦持ち料金（${v.vehicleCount}台）：<strong>都度見積</strong>`;
+    cm+='　｜　荷捌駐車料金：30分無料、以降400円/30分';
+    res.push({icon:'💴',cls:'info',lbl:'ルール8：費用概算',msg:cm});
   }
-
-  // ── Rule 5: 搬出入ルート ──
-  if (v.targetFloor) {
-    const comm = COMM_FLOORS.includes(v.targetFloor);
-    res.push({ icon:'ℹ️', cls:'info', lbl:'ルール5：搬出入ルート自動提案',
-      msg: comm
-        ? '推奨ルート：<strong>ルートD（G6・G7 → 荷捌き14,15番）</strong> ※商業エリア'
-        : '推奨ルート：<strong>ルートA（EV-1 → 荷捌き1,2番）</strong> 最大積載2,600kg' });
-  }
-
-  // ── Rule 6: 特殊物品 ──
-  if (v.specialItem === 'あり') {
-    res.push({ icon:'⚠️', cls:'warn', lbl:'ルール6：特殊物品チェック',
-      msg:'特殊物品は縦持ち対象外です。<strong>直納＋EVオペレーター手配が必要</strong>です（日中 26,000円 ／ 夜間 34,000円 per ELV）' });
-  }
-
-  // ── Rule 7: 作業申請書 ──
-  if (v.unpackWork === 'あり') {
-    res.push({ icon:'⚠️', cls:'warn', lbl:'ルール7：作業申請書チェック',
-      msg:'搬出入申請に加えて<strong>「作業申請書」の提出が必要</strong>です（ポータルサイトにて提出）' });
-  }
-
-  // ── Rule 8: 費用概算 ──
-  if (isBulk && v.vehicleCount > 0) {
-    const night = v.startMin !== null && (v.startMin >= 22*60 || (v.endMin !== null && v.endMin > 24*60));
-    let costMsg;
-    if (v.vehicleCount >= 10) {
-      const rate = night ? 34000 : 24000;
-      costMsg = `縦持ち料金（${v.vehicleCount}台）：${night?'夜間':'日中'} ${rate.toLocaleString()}円 × ${v.vehicleCount}台 = <strong>${(rate*v.vehicleCount).toLocaleString()}円</strong>`;
-    } else {
-      costMsg = `縦持ち料金（${v.vehicleCount}台）：<strong>都度見積</strong>`;
-    }
-    costMsg += '　｜　荷捌駐車料金：30分無料、以降400円/30分';
-    res.push({ icon:'💴', cls:'info', lbl:'ルール8：費用概算', msg: costMsg });
-  }
-
-  // ── Rule 9: キャンセル期限 ──
-  if (isBulk && v.desiredDate) {
-    const cd = subtractBizDays(v.desiredDate, 6);
-    res.push({ icon:'📅', cls:'info', lbl:'ルール9：キャンセル期限',
-      msg:`キャンセル期限：<strong>${fmtDate(cd)} 18:00まで</strong>（希望日の6営業日前）` });
-  }
-
-  renderAI(res);
-  renderSummary(v, isBulk, res);
+  if(isBulk&&v.desiredDate){const cd=subtractBizDays(v.desiredDate,6);res.push({icon:'📅',cls:'info',lbl:'ルール9：キャンセル期限',msg:`キャンセル期限：<strong>${fmtDate(cd)} 18:00まで</strong>（希望日の6営業日前）`});}
+  renderAI(res);renderSummary(v,isBulk,res);
 }
 
-// ── Render AI results ──
-function renderAI(res) {
-  if (!res.length) {
-    document.getElementById('aiResults').innerHTML = '<p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p>';
-    return;
-  }
-  const S = {
-    ok:    'bg-green-50 border-green-200 text-green-800',
-    error: 'bg-red-50 border-red-200 text-red-800',
-    warn:  'bg-yellow-50 border-yellow-200 text-yellow-800',
-    info:  'bg-blue-50 border-blue-200 text-blue-800',
-  };
-  document.getElementById('aiResults').innerHTML = res.map(r =>
-    `<div class="check-item rounded-lg border ${S[r.cls]||S.info} px-3 py-2.5 mb-2">
-      <div class="flex gap-2">
-        <span class="text-base shrink-0 mt-0.5">${r.icon}</span>
-        <div>
-          <p class="text-xs font-semibold mb-0.5 opacity-60">${r.lbl}</p>
-          <p class="text-sm leading-relaxed">${r.msg}</p>
-        </div>
-      </div>
-    </div>`
-  ).join('');
+function renderAI(res){
+  if(!res.length){document.getElementById('aiResults').innerHTML='<p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p>';return;}
+  const S={ok:'bg-green-50 border-green-200 text-green-800',error:'bg-red-50 border-red-200 text-red-800',warn:'bg-yellow-50 border-yellow-200 text-yellow-800',info:'bg-blue-50 border-blue-200 text-blue-800'};
+  document.getElementById('aiResults').innerHTML=res.map(r=>`<div class="check-item rounded-lg border ${S[r.cls]||S.info} px-3 py-2.5 mb-2"><div class="flex gap-2"><span class="text-base shrink-0 mt-0.5">${r.icon}</span><div><p class="text-xs font-semibold mb-0.5 opacity-60">${r.lbl}</p><p class="text-sm leading-relaxed">${r.msg}</p></div></div></div>`).join('');
 }
+function applySlot(s,e,date){document.getElementById('desiredDate').value=date;document.getElementById('startTime').value=s;document.getElementById('endTime').value=e;runCheck();window.scrollTo({top:0,behavior:'smooth'});}
 
-function applySlot(s, e, date) {
-  document.getElementById('desiredDate').value = date;
-  document.getElementById('startTime').value = s;
-  document.getElementById('endTime').value = e;
-  runCheck();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// ── Summary ──
-function renderSummary(v, isBulk, res) {
-  const box = document.getElementById('summaryBox');
-  if (!v.appType || !v.workType || !v.workContent || !v.desiredDate) { box.classList.add('hidden'); return; }
+function renderSummary(v,isBulk,res){
+  const box=document.getElementById('summaryBox');
+  if(!v.appType||!v.workType||!v.workContent||!v.desiredDate){box.classList.add('hidden');return;}
   box.classList.remove('hidden');
-
-  const isBulkType = isBulk || v.appType === '大量物・重量物';
-  const cls = isBulk ? '大量物' : (v.appType === '大量物・重量物' ? '重量物' : '通常');
-  const req = isBulkType ? 10 : (v.appType === '臨時' ? 3 : 0);
-  const deadline = req > 0 && v.desiredDate ? fmtDate(subtractBizDays(v.desiredDate, req)) + `（${req}営業日前まで）` : '規定なし';
-  const recTime = isBulkType ? '平日夜間 22:00〜翌6:00 または土日祝' : '制限なし（通常申請）';
-  const isComm = COMM_FLOORS.includes(v.targetFloor);
-  const route = v.targetFloor ? (isComm ? 'ルートD（G6・G7 → 荷捌き14,15番）' : 'ルートA（EV-1 → 荷捌き1,2番）') : '—';
-  const yogo = isBulkType ? '要（養生シート必須）' : '不要';
-  const tatemo = isBulk && v.vehicleCount >= 2 ? '要' : '不要';
-  const cancel = isBulkType && v.desiredDate ? fmtDate(subtractBizDays(v.desiredDate, 6)) + ' 18:00' : '—';
-  let cost = '—';
-  if (isBulk && v.vehicleCount) {
-    const night = v.startMin !== null && (v.startMin >= 22*60 || (v.endMin !== null && v.endMin > 24*60));
-    cost = v.vehicleCount >= 10 ? `${(night?34000:24000).toLocaleString()}円 × ${v.vehicleCount}台` : '都度見積';
-  }
-
-  const items = [
-    ['分類', cls], ['申請期限', deadline], ['推奨時間帯', recTime],
-    ['推奨ルート', route], ['養生の要否', yogo], ['縦持ちの要否', tatemo],
-    ['キャンセル期限', cancel], ['概算費用', cost],
-  ];
-  document.getElementById('summaryGrid').innerHTML = items.map(([k,val]) =>
-    `<div><p class="text-xs text-gray-400 font-medium">${k}</p><p class="text-sm font-semibold text-gray-800 mt-0.5">${val}</p></div>`
-  ).join('');
-
-  const hasErr = res.some(r => r.cls === 'error');
-  document.getElementById('summaryStatus').innerHTML = hasErr
-    ? `<p class="text-red-700 font-semibold text-sm">❌ 条件を確認してください（AIチェック結果を修正後に申請してください）</p>`
-    : `<p class="text-green-700 font-semibold text-sm">✅ 申請可能です</p>`;
+  const isBT=isBulk||v.appType==='大量物・重量物';
+  const cls=isBulk?'大量物':(v.appType==='大量物・重量物'?'重量物':'通常');
+  const req=isBT?10:(v.appType==='臨時'?3:0);
+  const deadline=req>0&&v.desiredDate?fmtDate(subtractBizDays(v.desiredDate,req))+`（${req}営業日前まで）`:'規定なし';
+  const recTime=isBT?'平日夜間 22:00〜翌6:00 または土日祝':'制限なし（通常申請）';
+  const isComm=COMM_FLOORS.includes(v.targetFloor);
+  const route=v.targetFloor?(isComm?'ルートD（G6・G7 → 荷捌き14,15番）':'ルートA（EV-1 → 荷捌き1,2番）'):'—';
+  const cancel=isBT&&v.desiredDate?fmtDate(subtractBizDays(v.desiredDate,6))+' 18:00':'—';
+  let cost='—';
+  if(isBulk&&v.vehicleCount){const night=v.startMin!==null&&(v.startMin>=22*60||(v.endMin!==null&&v.endMin>24*60));cost=v.vehicleCount>=10?`${(night?34000:24000).toLocaleString()}円 × ${v.vehicleCount}台`:'都度見積';}
+  const items=[['分類',cls],['申請期限',deadline],['推奨時間帯',recTime],['推奨ルート',route],['養生の要否',isBT?'要（養生シート必須）':'不要'],['縦持ちの要否',isBulk&&v.vehicleCount>=2?'要':'不要'],['キャンセル期限',cancel],['概算費用',cost]];
+  document.getElementById('summaryGrid').innerHTML=items.map(([k,val])=>`<div><p class="text-xs text-gray-400 font-medium">${k}</p><p class="text-sm font-semibold text-gray-800 mt-0.5">${val}</p></div>`).join('');
+  const hasErr=res.some(r=>r.cls==='error');
+  document.getElementById('summaryStatus').innerHTML=hasErr?`<p class="text-red-700 font-semibold text-sm">❌ 条件を確認してください（AIチェック結果を修正後に申請してください）</p>`:`<p class="text-green-700 font-semibold text-sm">✅ 申請可能です</p>`;
 }
 
-// ============================================================
-// SUBMIT
-// ============================================================
-function submitApp() {
-  const v = getVals();
-  if (!v.appType || !v.workType || !v.workContent || !v.desiredDate || v.startMin === null || v.endMin === null || !v.vehicleSize || !v.targetFloor || !v.vehicleCount) {
-    alert('必須項目をすべて入力してください。\n（申請種別・作業種別・作業内容・希望日・希望時間帯・車両台数・車両サイズ・搬出入先フロア）');
-    return;
-  }
-  const apps = getApps();
-  // Find max seq
-  let maxSeq = 0;
-  apps.forEach(a => { const n = parseInt(a.id.replace('BAP','')); if(n>maxSeq) maxSeq=n; });
-  const id = 'BAP' + String(maxSeq+1).padStart(5,'0');
-  apps.push({ ...v, id, company:'テナント株式会社', status:'審査中', createdAt: new Date().toISOString() });
-  saveApps(apps);
-  alert(`申請を受け付けました。\n申請番号：${id}`);
-  // Reset form
+function submitApp(){
+  const v=getVals();
+  if(!v.appType||!v.workType||!v.workContent||!v.desiredDate||v.startMin===null||v.endMin===null||!v.vehicleSize||!v.targetFloor||!v.vehicleCount){alert('必須項目をすべて入力してください。');return;}
+  const apps=getApps();let maxSeq=0;
+  apps.forEach(a=>{const n=parseInt(a.id.replace('BAP',''));if(n>maxSeq)maxSeq=n;});
+  const id='BAP'+String(maxSeq+1).padStart(5,'0');
+  apps.push({...v,id,company:'テナント株式会社',status:'審査中',createdAt:new Date().toISOString()});
+  saveApps(apps);alert(`申請を受け付けました。\n申請番号：${id}`);
   document.getElementById('appForm').reset();
-  document.querySelector('input[name="specialItem"][value="なし"]').checked = true;
-  document.querySelector('input[name="unpackWork"][value="なし"]').checked = true;
+  document.querySelector('input[name="specialItem"][value="なし"]').checked=true;
+  document.querySelector('input[name="unpackWork"][value="なし"]').checked=true;
   document.getElementById('specialDetail').classList.add('hidden');
   document.getElementById('summaryBox').classList.add('hidden');
-  document.getElementById('aiResults').innerHTML = '<p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p>';
+  document.getElementById('aiResults').innerHTML='<p class="text-gray-400 text-sm">フォームを入力するとリアルタイムでチェック結果が表示されます。</p>';
   switchTab('B');
 }
 
-// ============================================================
-// HISTORY
-// ============================================================
-let currentFilter = 'all';
-function setFilter(f) {
-  currentFilter = f;
-  document.querySelectorAll('.filter-btn').forEach(b => {
-    b.style.backgroundColor=''; b.style.color=''; b.style.borderColor='';
-  });
-  const ab = document.getElementById('fb-'+f);
-  if (ab) { ab.style.backgroundColor=MC; ab.style.color='#fff'; ab.style.borderColor=MC; }
+let currentFilter='all';
+function setFilter(f){
+  currentFilter=f;
+  document.querySelectorAll('.filter-btn').forEach(b=>{b.style.backgroundColor='';b.style.color='';b.style.borderColor='';});
+  const ab=document.getElementById('fb-'+f);
+  if(ab){ab.style.backgroundColor=MC;ab.style.color='#fff';ab.style.borderColor=MC;}
   renderHistory();
 }
-
-const SS = {
-  '審査中':  { bg:'bg-blue-100 text-blue-800',   icon:'🔍' },
-  '承認済み':{ bg:'bg-green-100 text-green-800', icon:'✅' },
-  '修正依頼':{ bg:'bg-yellow-100 text-yellow-800', icon:'✏️' },
-  '却下':    { bg:'bg-red-100 text-red-800',     icon:'❌' },
-};
-
-function renderHistory() {
-  const apps = getApps();
-  const list = currentFilter === 'all' ? apps : apps.filter(a => a.status === currentFilter);
-  const el = document.getElementById('historyList');
-  if (!list.length) {
-    el.innerHTML = '<div class="bg-white rounded-xl border border-gray-100 p-10 text-center text-gray-400 text-sm">該当する申請はありません</div>';
-    return;
-  }
-  el.innerHTML = [...list].reverse().map(a => {
-    const ss = SS[a.status] || { bg:'bg-gray-100 text-gray-700', icon:'?' };
-    const isComm = COMM_FLOORS.includes(a.targetFloor);
-    const route = isComm ? 'ルートD（G6・G7 → 荷捌き14,15番）' : 'ルートA（EV-1 → 荷捌き1,2番）';
-    const sLbl = a.startMin != null ? minsToLabel(a.startMin) : '—';
-    const eLbl = a.endMin   != null ? minsToLabel(a.endMin)   : '—';
-    const dDisp = a.desiredDate ? a.desiredDate.replace(/-/g,'/') : '—';
+const SS={'審査中':{bg:'bg-blue-100 text-blue-800',icon:'🔍'},'承認済み':{bg:'bg-green-100 text-green-800',icon:'✅'},'修正依頼':{bg:'bg-yellow-100 text-yellow-800',icon:'✏️'},'却下':{bg:'bg-red-100 text-red-800',icon:'❌'}};
+function renderHistory(){
+  const apps=getApps();const list=currentFilter==='all'?apps:apps.filter(a=>a.status===currentFilter);
+  const el=document.getElementById('historyList');
+  if(!list.length){el.innerHTML='<div class="bg-white rounded-xl border border-gray-100 p-10 text-center text-gray-400 text-sm">該当する申請はありません</div>';return;}
+  el.innerHTML=[...list].reverse().map(a=>{
+    const ss=SS[a.status]||{bg:'bg-gray-100 text-gray-700',icon:'?'};
+    const isComm=COMM_FLOORS.includes(a.targetFloor);
+    const route=isComm?'ルートD（G6・G7 → 荷捌き14,15番）':'ルートA（EV-1 → 荷捌き1,2番）';
+    const sL=a.startMin!=null?minsToLabel(a.startMin):'—';const eL=a.endMin!=null?minsToLabel(a.endMin):'—';
+    const dD=a.desiredDate?a.desiredDate.replace(/-/g,'/'):'—';
     return `<div class="bg-white rounded-xl border border-gray-100 shadow-sm p-5 mb-3 hover:shadow-md transition-shadow">
-      <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
-        <div>
-          <span class="text-xs font-mono text-gray-400">${a.id}</span>
-          <p class="font-bold text-gray-900">${a.company || 'テナント'}</p>
-        </div>
-        <span class="px-3 py-1 rounded-full text-xs font-semibold ${ss.bg}">${ss.icon} ${a.status}</span>
-      </div>
+      <div class="flex flex-wrap items-start justify-between gap-2 mb-3"><div><span class="text-xs font-mono text-gray-400">${a.id}</span><p class="font-bold text-gray-900">${a.company||'テナント'}</p></div>
+      <span class="px-3 py-1 rounded-full text-xs font-semibold ${ss.bg}">${ss.icon} ${a.status}</span></div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm">
         <div><p class="text-xs text-gray-400">申請種別</p><p class="font-medium text-gray-800">${a.appType||'—'}</p></div>
         <div><p class="text-xs text-gray-400">作業内容</p><p class="font-medium text-gray-800">${a.workType||''} / ${a.workContent||'—'}</p></div>
-        <div><p class="text-xs text-gray-400">希望日時</p><p class="font-medium text-gray-800">${dDisp} ${sLbl}〜${eLbl}</p></div>
+        <div><p class="text-xs text-gray-400">希望日時</p><p class="font-medium text-gray-800">${dD} ${sL}〜${eL}</p></div>
         <div><p class="text-xs text-gray-400">車両</p><p class="font-medium text-gray-800">${a.vehicleSize||'—'} × ${a.vehicleCount||'—'}台</p></div>
         <div><p class="text-xs text-gray-400">搬出入先</p><p class="font-medium text-gray-800">${a.targetFloor||'—'}</p></div>
         <div><p class="text-xs text-gray-400">推奨ルート</p><p class="font-medium text-gray-800">${route}</p></div>
       </div>
-      ${a.modNote ? `<div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-xs text-yellow-800"><strong>修正依頼：</strong>${a.modNote}</div>` : ''}
+      ${a.modNote?`<div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-xs text-yellow-800"><strong>修正依頼：</strong>${a.modNote}</div>`:''}
     </div>`;
   }).join('');
 }
 
-// ============================================================
-// STORAGE
-// ============================================================
-function getApps()  { return JSON.parse(localStorage.getItem('bap_apps')||'[]'); }
-function saveApps(a){ localStorage.setItem('bap_apps', JSON.stringify(a)); }
-
-function initDemoData() {
-  const ex = getApps();
-  if (ex.some(a => a.id === 'BAP00001')) return;
-  const demo = [
-    { id:'BAP00001', company:'株式会社 ABC商事', appType:'大量物・重量物', workType:'搬入', workContent:'引越し',
-      desiredDate:'2026-06-15', startMin:22*60, endMin:26*60,
-      vehicleCount:3, vehicleSize:'2tトラック', targetFloor:'15F',
-      cardboardCount:150, totalWeight:800, specialItem:'なし', unpackWork:'あり',
-      remarks:'', status:'承認済み', createdAt:'2026-05-20T09:00:00Z' },
-    { id:'BAP00002', company:'株式会社 XYZ', appType:'大量物・重量物', workType:'搬入', workContent:'工事資材',
-      desiredDate:'2026-06-18', startMin:20*60, endMin:25*60,
-      vehicleCount:5, vehicleSize:'2tトラック', targetFloor:'25F',
-      cardboardCount:200, totalWeight:1200, specialItem:'なし', unpackWork:'なし',
-      remarks:'', status:'審査中', createdAt:'2026-05-22T10:00:00Z' },
-    { id:'BAP00003', company:'株式会社 DEF', appType:'臨時', workType:'搬出', workContent:'資材搬出',
-      desiredDate:'2026-06-20', startMin:10*60, endMin:11*60,
-      vehicleCount:1, vehicleSize:'軽トラ', targetFloor:'8F',
-      cardboardCount:20, totalWeight:100, specialItem:'なし', unpackWork:'なし',
-      remarks:'', status:'修正依頼', modNote:'EV-1は当日点検予定です。EV-2に変更可能ですか？',
-      createdAt:'2026-05-23T14:00:00Z' },
+function getApps(){return JSON.parse(localStorage.getItem('bap_apps')||'[]');}
+function saveApps(a){localStorage.setItem('bap_apps',JSON.stringify(a));}
+function initDemoData(){
+  const ex=getApps();if(ex.some(a=>a.id==='BAP00001'))return;
+  const demo=[
+    {id:'BAP00001',company:'株式会社 ABC商事',appType:'大量物・重量物',workType:'搬入',workContent:'引越し',desiredDate:'2026-06-15',startMin:22*60,endMin:26*60,vehicleCount:3,vehicleSize:'2tトラック',targetFloor:'15F',cardboardCount:150,totalWeight:800,specialItem:'なし',unpackWork:'あり',remarks:'',status:'承認済み',createdAt:'2026-05-20T09:00:00Z'},
+    {id:'BAP00002',company:'株式会社 XYZ',appType:'大量物・重量物',workType:'搬入',workContent:'工事資材',desiredDate:'2026-06-18',startMin:20*60,endMin:25*60,vehicleCount:5,vehicleSize:'2tトラック',targetFloor:'25F',cardboardCount:200,totalWeight:1200,specialItem:'なし',unpackWork:'なし',remarks:'',status:'審査中',createdAt:'2026-05-22T10:00:00Z'},
+    {id:'BAP00003',company:'株式会社 DEF',appType:'臨時',workType:'搬出',workContent:'資材搬出',desiredDate:'2026-06-20',startMin:10*60,endMin:11*60,vehicleCount:1,vehicleSize:'軽トラ',targetFloor:'8F',cardboardCount:20,totalWeight:100,specialItem:'なし',unpackWork:'なし',remarks:'',status:'修正依頼',modNote:'EV-1は当日点検予定です。EV-2に変更可能ですか？',createdAt:'2026-05-23T14:00:00Z'},
   ];
-  saveApps([...demo, ...ex]);
+  saveApps([...demo,...ex]);
 }
 
-// ============================================================
-// BOOT
-// ============================================================
-(function boot() {
-  initSelects();
-  initDemoData();
-  const t = new Date();
-  document.getElementById('todayDisp').textContent = `${t.getFullYear()}年${t.getMonth()+1}月${t.getDate()}日（${['日','月','火','水','木','金','土'][t.getDay()]}）`;
-  switchTab('A');
-  setFilter('all');
+// AI check on stored data
+function aiCheckOnApp(a){
+  const res=[];const bR=[];
+  if(a.vehicleSize==='2tトラック'&&a.vehicleCount>=2)bR.push(`2tトラック ${a.vehicleCount}台`);
+  if(a.cardboardCount>100)bR.push(`段ボール ${a.cardboardCount}箱`);
+  if(a.totalWeight>500)bR.push(`総重量 ${a.totalWeight}kg`);
+  const isBulk=bR.length>0;
+  res.push(isBulk?{icon:'⚠️',cls:'warn',lbl:'大量物判定',msg:`大量物（${bR.join('、')}）`}:{icon:'✅',cls:'ok',lbl:'大量物判定',msg:'通常申請の範囲内'});
+  if(a.desiredDate&&a.startMin!=null&&a.endMin!=null){
+    const overlapDay=a.startMin<22*60&&a.endMin>6*60;const weekday=isWeekday(a.desiredDate);
+    res.push(isBulk&&weekday&&overlapDay?{icon:'❌',cls:'error',lbl:'時間帯',msg:'大量物の平日日中搬出入は不可'}:{icon:'✅',cls:'ok',lbl:'時間帯',msg:'時間帯条件OK'});
+  }
+  if(a.desiredDate){const isBT=isBulk||a.appType==='大量物・重量物';const req=isBT?10:(a.appType==='臨時'?3:0);
+    if(req>0){const left=bizDaysBetween(todayStr(),a.desiredDate);
+      res.push(left>=req?{icon:'✅',cls:'ok',lbl:'申請期限',msg:`期限内（残${left}営業日）`}:{icon:'❌',cls:'error',lbl:'申請期限',msg:`期限切れ（残${left}日/必要${req}日）`});
+    }
+  }
+  res.push({icon:'ℹ️',cls:'info',lbl:'推奨ルート',msg:COMM_FLOORS.includes(a.targetFloor)?'ルートD（商業エリア）':'ルートA（EV-1）'});
+  if(a.specialItem==='あり')res.push({icon:'⚠️',cls:'warn',lbl:'特殊物品',msg:'EVオペレーター手配が必要'});
+  if(a.unpackWork==='あり')res.push({icon:'⚠️',cls:'warn',lbl:'作業申請書',msg:'作業申請書の提出が必要'});
+  return res;
+}
+
+// Dashboard
+function renderDashboard(){
+  const apps=getApps();const total=apps.length;
+  const approved=apps.filter(a=>a.status==='承認済み').length;
+  const pending=apps.filter(a=>a.status==='審査中').length;
+  const returned=apps.filter(a=>a.status==='修正依頼'||a.status==='却下').length;
+  const pct=n=>total?Math.round(n/total*100):0;
+  document.getElementById('dashCards').innerHTML=[
+    {label:'今月の申請数',val:total+'件',sub:'全申請',cls:'bg-indigo-50 border-indigo-200 text-indigo-900'},
+    {label:'承認済み',val:pct(approved)+'%',sub:approved+'件',cls:'bg-green-50 border-green-200 text-green-900'},
+    {label:'審査中',val:pct(pending)+'%',sub:pending+'件',cls:'bg-yellow-50 border-yellow-200 text-yellow-900'},
+    {label:'差し戻し',val:pct(returned)+'%',sub:returned+'件',cls:'bg-red-50 border-red-200 text-red-900'},
+  ].map(c=>`<div class="rounded-xl border ${c.cls} p-4"><p class="text-xs font-medium opacity-60 mb-1">${c.label}</p><p class="text-3xl font-bold mb-0.5">${c.val}</p><p class="text-xs opacity-50">${c.sub}</p></div>`).join('');
+  const badge=document.getElementById('pendingBadge');if(badge)badge.textContent=pending;
+  const CS={ok:'bg-green-50 border-green-200 text-green-800',error:'bg-red-50 border-red-200 text-red-800',warn:'bg-yellow-50 border-yellow-200 text-yellow-800',info:'bg-blue-50 border-blue-200 text-blue-800'};
+  const pendingApps=apps.filter(a=>a.status==='審査中');const pel=document.getElementById('pendingList');
+  if(!pendingApps.length){pel.innerHTML='<div class="bg-white rounded-xl border border-gray-100 p-8 text-center text-gray-400 text-sm">審査中の申請はありません ✅</div>';}
+  else{
+    pel.innerHTML=pendingApps.map(a=>{
+      const aiRes=aiCheckOnApp(a);const hasErr=aiRes.some(r=>r.cls==='error');const hasWarn=aiRes.some(r=>r.cls==='warn');
+      const border=hasErr?'border-red-300':hasWarn?'border-yellow-300':'border-gray-100';
+      const sL=a.startMin!=null?minsToLabel(a.startMin):'—';const eL=a.endMin!=null?minsToLabel(a.endMin):'—';
+      const dD=a.desiredDate?a.desiredDate.replace(/-/g,'/'):'—';
+      const route=COMM_FLOORS.includes(a.targetFloor)?'ルートD':'ルートA';
+      const chips=aiRes.map(r=>`<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded border text-xs ${CS[r.cls]||CS.info}">${r.icon} ${r.lbl}：${r.msg}</span>`).join('');
+      return `<div class="bg-white rounded-xl border ${border} shadow-sm p-5 mb-3">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+          <div><span class="text-xs font-mono text-gray-400">${a.id}</span><p class="font-bold text-gray-900">${a.company||'テナント'}</p></div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="approveApp('${a.id}')" class="px-3 py-1.5 text-xs text-white font-semibold rounded-lg hover:opacity-90" style="background:#16a34a">✅ 承認</button>
+            <button onclick="showModal('${a.id}','conditional')" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-blue-400 text-blue-700 hover:bg-blue-50">🔵 条件付き承認</button>
+            <button onclick="showModal('${a.id}','return')" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-red-400 text-red-700 hover:bg-red-50">↩️ 差し戻し</button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm mb-3">
+          <div><p class="text-xs text-gray-400">作業内容</p><p class="font-medium text-gray-800">${a.workType||''} / ${a.workContent||'—'}</p></div>
+          <div><p class="text-xs text-gray-400">希望日時</p><p class="font-medium text-gray-800">${dD} ${sL}〜${eL}</p></div>
+          <div><p class="text-xs text-gray-400">車両</p><p class="font-medium text-gray-800">${a.vehicleSize||'—'} × ${a.vehicleCount||'—'}台</p></div>
+          <div><p class="text-xs text-gray-400">フロア / ルート</p><p class="font-medium text-gray-800">${a.targetFloor||'—'} / ${route}</p></div>
+        </div>
+        <div><p class="text-xs text-gray-500 font-semibold mb-1.5">🤖 AIレビュー</p><div class="flex flex-wrap gap-1.5">${chips}</div></div>
+      </div>`;
+    }).join('');
+  }
+  const today=todayStr();const now=new Date();const nowMin=now.getHours()*60+now.getMinutes();
+  const todayApps=apps.filter(a=>a.desiredDate===today&&(a.status==='承認済み'||a.status==='審査中'));
+  const tel=document.getElementById('todayList');
+  if(!todayApps.length){tel.innerHTML='<div class="bg-white rounded-xl border border-gray-100 p-8 text-center text-gray-400 text-sm">本日の搬出入予定はありません</div>';}
+  else{tel.innerHTML=todayApps.map(a=>{
+    const sM=a.startMin||0,eM=a.endMin||0;const active=nowMin>=sM&&nowMin<eM&&a.status==='承認済み';
+    const b2=active?`<span class="shrink-0 px-2 py-1 rounded-full text-xs font-bold bg-green-500 text-white">● 進行中</span>`:`<span class="shrink-0 px-2 py-1 rounded-full text-xs font-bold bg-gray-200 text-gray-600">■ 待機中</span>`;
+    return `<div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 mb-3 flex items-center gap-4">${b2}<div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm"><div><p class="text-xs text-gray-400">申請番号</p><p class="font-mono text-xs text-gray-700">${a.id}</p></div><div><p class="text-xs text-gray-400">作業内容</p><p class="font-medium text-gray-800">${a.workContent||'—'}</p></div><div><p class="text-xs text-gray-400">時間帯</p><p class="font-medium text-gray-800">${minsToLabel(sM)}〜${minsToLabel(eM)}</p></div><div><p class="text-xs text-gray-400">車両 / フロア</p><p class="font-medium text-gray-800">${a.vehicleSize}×${a.vehicleCount}台 / ${a.targetFloor}</p></div></div></div>`;
+  }).join('');}
+}
+function approveApp(id){const apps=getApps();const idx=apps.findIndex(a=>a.id===id);if(idx>=0){apps[idx].status='承認済み';saveApps(apps);renderDashboard();}}
+function showModal(id,type){
+  document.getElementById('modalAppId').value=id;document.getElementById('modalType').value=type;
+  document.getElementById('modalTitle').textContent=type==='conditional'?'条件付き承認':'差し戻し';
+  document.getElementById('modalComment').placeholder=type==='conditional'?'条件・注記を入力してください（例：EV-2を使用すること）':'差し戻し理由・修正依頼内容を入力してください';
+  document.getElementById('appModal').classList.remove('hidden');
+}
+function saveModal(){
+  const id=document.getElementById('modalAppId').value;const type=document.getElementById('modalType').value;
+  const comment=document.getElementById('modalComment').value.trim();if(!comment){alert('コメントを入力してください');return;}
+  const apps=getApps();const idx=apps.findIndex(a=>a.id===id);
+  if(idx>=0){apps[idx].status=type==='conditional'?'承認済み':'修正依頼';apps[idx].modNote=comment;saveApps(apps);}
+  closeModal();renderDashboard();
+}
+function closeModal(){document.getElementById('appModal').classList.add('hidden');document.getElementById('modalComment').value='';}
+
+// Schedule
+let schedDate=todayStr();
+function changeDay(delta){
+  const d=new Date(schedDate+'T00:00:00');d.setDate(d.getDate()+delta);
+  schedDate=`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;renderSchedule();
+}
+function getRouteId(a){
+  if(COMM_FLOORS.includes(a.targetFloor))return 'D';
+  const n=parseInt(a.id.replace('BAP',''))||1;return ['A','B','C'][n%3];
+}
+function renderSchedule(){
+  const d=new Date(schedDate+'T00:00:00');const DN=['日','月','火','水','木','金','土'];
+  document.getElementById('scheduleDate').textContent=`${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${DN[d.getDay()]}）`;
+  const apps=getApps();const dayApps=apps.filter(a=>a.desiredDate===schedDate);
+  const TOTAL=1800;
+  const ROUTES=[{id:'A',label:'ルートA',sub:'EV-1 → 荷捌1,2番'},{id:'B',label:'ルートB',sub:'EV-2 → 荷捌10,11番'},{id:'C',label:'ルートC',sub:'EV-3 → 荷捌12,13番'},{id:'D',label:'ルートD',sub:'G6,G7 → 荷捌14,15番'}];
+  const ticks=[];for(let h=0;h<=30;h+=3)ticks.push({min:h*60,label:h<24?`${pad(h)}:00`:`翌${pad(h-24)}:00`});
+  const hdr=`<div class="flex mb-0" style="padding-left:150px"><div class="flex-1 relative" style="height:22px">${ticks.map(t=>`<div style="position:absolute;left:${(t.min/TOTAL*100).toFixed(2)}%;transform:translateX(-50%)" class="text-xs text-gray-400 whitespace-nowrap">${t.label}</div>`).join('')}</div></div>`;
+  const rows=ROUTES.map(rt=>{
+    const rtApps=dayApps.filter(a=>getRouteId(a)===rt.id);
+    const blocks=rtApps.map(a=>{
+      const s=Math.max(0,Math.min(a.startMin||0,TOTAL));let e=Math.min(a.endMin!=null?a.endMin:s+120,TOTAL);if(e<=s)e=Math.min(s+60,TOTAL);
+      const left=(s/TOTAL*100).toFixed(3);const width=((e-s)/TOTAL*100).toFixed(3);
+      const isA=a.status==='承認済み';
+      const tip=`${a.id} ${a.company||''}｜${a.workContent}｜${minsToLabel(s)}〜${minsToLabel(e)}｜${a.vehicleSize}×${a.vehicleCount}台 ${a.targetFloor}`;
+      const sty=isA?`background:#1e3a5f;color:white;border-radius:5px;`:`background:transparent;border:2px dashed #93c5fd;border-radius:5px;color:#1e40af;`;
+      return `<div title="${tip}" style="position:absolute;left:${left}%;width:${width}%;top:5px;bottom:5px;${sty}overflow:hidden;min-width:6px;cursor:default;" class="flex items-center px-1.5 text-xs font-medium whitespace-nowrap overflow-hidden"><span class="truncate">${isA?a.workContent:'審査中'}</span></div>`;
+    }).join('');
+    const gl=ticks.map(t=>`<div style="position:absolute;left:${(t.min/TOTAL*100).toFixed(2)}%;top:0;bottom:0;border-left:1px solid #e5e7eb;"></div>`).join('');
+    return `<div class="flex items-stretch" style="height:46px;margin-bottom:2px"><div class="flex flex-col justify-center shrink-0 pr-3 border-r border-gray-200" style="width:150px;min-width:150px"><p class="text-xs font-bold text-gray-700 leading-tight">${rt.label}</p><p class="text-xs text-gray-400 leading-tight">${rt.sub}</p></div><div class="flex-1 relative" style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">${gl}${blocks}</div></div>`;
+  }).join('');
+  const legend=`<div class="flex items-center gap-5 mt-3 text-xs text-gray-500"><div class="flex items-center gap-1.5"><span class="inline-block w-5 h-3 rounded" style="background:#1e3a5f"></span>承認済み</div><div class="flex items-center gap-1.5"><span class="inline-block w-5 h-3 rounded border-2 border-dashed border-blue-400"></span>審査中</div><span class="text-gray-300">｜</span><span class="text-gray-400">ブロックにカーソルを合わせると詳細を表示</span></div>`;
+  document.getElementById('timeline').innerHTML=hdr+rows+legend;
+  renderWeeklySummary();
+}
+function renderWeeklySummary(){
+  const apps=getApps();const base=new Date(schedDate+'T00:00:00');
+  const weekApps=apps.filter(a=>{if(!a.desiredDate)return false;const diff=(new Date(a.desiredDate+'T00:00:00')-base)/(1000*60*60*24);return diff>=0&&diff<7;});
+  const approved=weekApps.filter(a=>a.status==='承認済み');
+  let peakMin=null,peakCnt=0;
+  for(let m=0;m<=1770;m+=30){const cnt=approved.filter(a=>(a.startMin||0)<=m&&(a.endMin||0)>m).length;if(cnt>peakCnt){peakCnt=cnt;peakMin=m;}}
+  const alerts=[];
+  ['A','B','C','D'].forEach(rId=>{
+    const byDate={};approved.filter(a=>getRouteId(a)===rId&&weekApps.includes(a)).forEach(a=>{if(!byDate[a.desiredDate])byDate[a.desiredDate]=[];byDate[a.desiredDate].push(a);});
+    Object.entries(byDate).forEach(([dt,dApps])=>{for(let i=0;i<dApps.length;i++)for(let j=i+1;j<dApps.length;j++){const[x,y]=[dApps[i],dApps[j]];if((x.startMin||0)<(y.endMin||0)&&(x.endMin||0)>(y.startMin||0))alerts.push(`ルート${rId} ${dt.replace(/-/g,'/')}：${x.id} と ${y.id} が重複`);}});
+  });
+  document.getElementById('weeklySummary').innerHTML=`
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+      <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs text-gray-400 mb-1">搬出入予定件数</p><p class="text-2xl font-bold text-gray-800">${weekApps.length}<span class="text-sm font-normal text-gray-500 ml-1">件</span></p><p class="text-xs text-gray-400">承認済み ${approved.length}件 / 審査中 ${weekApps.length-approved.length}件</p></div>
+      <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs text-gray-400 mb-1">ピーク時間帯</p><p class="text-xl font-bold text-gray-800">${peakMin!==null&&peakCnt>0?minsToLabel(peakMin)+'〜':'—'}</p><p class="text-xs text-gray-400">${peakCnt>0?`同時 ${peakCnt}件`:'予定なし'}</p></div>
+      <div class="bg-gray-50 rounded-lg p-3"><p class="text-xs text-gray-400 mb-1">🤖 AIアラート</p><p class="text-xl font-bold ${alerts.length?'text-red-600':'text-green-600'}">${alerts.length>0?alerts.length+'件':'なし'}</p><p class="text-xs text-gray-400">${alerts.length?'ルート競合あり':'問題なし'}</p></div>
+    </div>
+    ${alerts.length?`<div class="bg-red-50 border border-red-200 rounded-lg p-3"><p class="text-xs font-bold text-red-700 mb-2">⚠️ AIアラート詳細</p>${alerts.map(a=>`<p class="text-xs text-red-700 mb-1">• ${a}</p>`).join('')}</div>`:`<div class="bg-green-50 border border-green-200 rounded-lg p-3 text-xs text-green-700">✅ この期間にルート競合はありません</div>`}`;
+}
+
+(function boot(){
+  initSelects();initDemoData();
+  const t=new Date();
+  document.getElementById('todayDisp').textContent=`${t.getFullYear()}年${t.getMonth()+1}月${t.getDate()}日（${['日','月','火','水','木','金','土'][t.getDay()]}）`;
+  switchTab('A');setFilter('all');
 })();
 </script>
 </body>
